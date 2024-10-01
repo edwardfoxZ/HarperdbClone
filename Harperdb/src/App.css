@@ -1,0 +1,72 @@
+.Main {
+    
+}
+
+.border-gardient {
+
+}
+
+.background-main {
+  z-index: 1;
+  background-image: url("https://cdn.prod.website-files.com/6374050260446c42f94dc90f/64f7b11b7e659ab55de4b721_WideBottGrad1.png"),
+    url("https://cdn.prod.website-files.com/6374050260446c42f94dc90f/638a37c2242c0a570bd2bec2_HeroGlobe3.webp"),
+    url("https://cdn.prod.website-files.com/6374050260446c42f94dc90f/6501ff52e302643ab196eb58_HPStarBG3.jpg");
+  background-position: 50% 100%, 100% 0, 0 0;
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-size: cover, 50vw, cover;
+  background-attachment: scroll, scroll, fixed;
+  position: relative;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.animate-slide {
+  animation: slide 2s infinite;
+}
+
+.text-gradient {
+  background-image: rgb(66, 173, 224);
+  background-image: linear-gradient(
+    90deg,
+    rgba(66, 173, 224, 1) 0%,
+    rgba(102, 190, 175, 1) 100%
+  );
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-footer {
+  background: rgb(91, 19, 185);
+  background: linear-gradient(
+    90deg,
+    rgba(91, 19, 185, 0.56243007456889) 0%,
+    rgba(91, 19, 185, 1) 20%,
+    rgba(91, 19, 185, 1) 81%,
+    rgba(91, 19, 185, 0.4447830157453606) 100%
+  );
+}
+
+.bg-PopupP {
+  z-index: 1;
+  background-image: linear-gradient(58deg, #000, #a0f0),
+    url("https://cdn.prod.website-files.com/6374050260446c42f94dc90f/6462b64c86aec741dfed00af_5.jpg");
+
+  background-position: 0 0, 100% 0;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+  background-attachment: scroll, fixed;
+  position: relative;
+}
