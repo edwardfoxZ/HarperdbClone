@@ -72,3 +72,14 @@
   background-attachment: scroll, fixed;
   position: relative;
 }
+
+.bg-popupCard {
+  background: rgb(16, 83, 105);
+  background: linear-gradient(
+    124deg,
+    rgba(16, 83, 105, 0.474) 21%,
+    rgba(78, 146, 215, 0.482) 48%,
+    rgba(62, 71, 131, 0.505) 69%,
+    rgba(23, 17, 41, 1) 100%
+  );
+}

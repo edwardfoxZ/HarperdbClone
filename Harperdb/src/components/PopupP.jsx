@@ -9,6 +9,7 @@ import {
 } from "../utils";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { PopupCards } from "./PopupCards";
 
 export const PopupP = () => {
   const toolIconRef = useRef();
@@ -22,7 +23,7 @@ export const PopupP = () => {
         start: "top 20%",
         end: "bottom center",
         scrub: true,
-        markers: true,
+        // markers: true,
       },
     });
     gsap.registerPlugin(ScrollTrigger);
@@ -39,13 +40,14 @@ export const PopupP = () => {
         start: "top 15%",
         end: "bottom top",
         scrub: true,
-        markers: true,
+        // markers: true,
       },
     });
   }, []);
 
   return (
-    <div className="w-full h-[129vh] bg-PopupP relative">
+    <div className="w-full h-[129vh] bg-PopupP relative overflow-hidden">
+      <PopupCards />
       <img
         ref={toolIconRef}
         className="absolute top-[3%] left-[33%]"

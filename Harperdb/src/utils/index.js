@@ -56,3 +56,26 @@ export const theCompletedIcon =
 
 export const theLastLightIcon =
   "https://cdn.prod.website-files.com/6374050260446c42f94dc90f/638e48c8e9575c029a2a4dc9_AppDissected-20.png";
+
+export const CardsPopup = [
+  {
+    id: 1,
+    str: "Application",
+    title: `Deploy user-programmed applications and pre-built add-ons on top of the data they depend on for a high throughput, ultra-low latency back end.`,
+  },
+  {
+    id: 2,
+    str: "Cache",
+    title: `In-memory systems deliver sub-millisecond lookups across hundreds of millions of records.`,
+  },
+  {
+    id: 3,
+    str: "Database",
+    title: `Lightning-fast distributed database delivers orders of magnitude more throughput per second than popular NoSQL alternatives while providing limitless horizontal scale. Streaming`,
+  },
+  {
+    id: 4,
+    str: "Streaming",
+    title: `Native real-time pub/sub communication and data processing via MQTT, WebSocket, and HTTP interfaces. HarperDB delivers powerful data-in-motion capabilities without layering in additional services like Kafka.`,
+  },
+];
