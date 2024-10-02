@@ -13,29 +13,33 @@ import { ScrollTrigger } from "gsap/all";
 export const PopupP = () => {
   const toolIconRef = useRef();
   const ringIconRef = useRef();
+  const dataIconRef = useRef();
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.to(toolIconRef.current, {
-      y: window.innerHeight,
-      duration: 3,
-      ease: "power3.in",
+    let tl = gsap.timeline({
       scrollTrigger: {
         trigger: toolIconRef.current,
-        start: "bottom 120%",
-        end: "max",
+        start: "top 20%",
+        end: "bottom center",
         scrub: true,
         markers: true,
-        onUpdate: (self) => {
-          const toolIconRect = toolIconRef.current.getBoundingClientRect();
-          const ringIconRect = ringIconRef.current.getBoundingClientRect();
-          if (toolIconRect.top <= ringIconRect.bottom) {
-            ringIconRef.current.style.opacity = 1;
-          } else {
-            ringIconRef.current.style.opacity = 0;
-          }
-        },
+      },
+    });
+    gsap.registerPlugin(ScrollTrigger);
+
+    tl.to(toolIconRef.current, {
+      y: 80,
+      ease: "power3.in",
+    });
+
+    gsap.to(dataIconRef.current, {
+      y: 300,
+      scrollTrigger: {
+        trigger: toolIconRef.current,
+        start: "top 15%",
+        end: "bottom top",
+        scrub: true,
+        markers: true,
       },
     });
   }, []);
@@ -58,7 +62,7 @@ export const PopupP = () => {
           src={ringIcon}
           alt=""
         />
-        <div>
+        <div ref={dataIconRef}>
           <img
             className="absolute top-[19%]"
             width="450px"
