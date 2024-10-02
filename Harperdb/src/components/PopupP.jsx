@@ -21,11 +21,13 @@ export const PopupP = () => {
 
     gsap.to(toolIconRef.current, {
       y: window.innerHeight,
+      duration: 3,
+      ease: "power3.in",
       scrollTrigger: {
         trigger: toolIconRef.current,
-        start: "top 30%",
+        start: "bottom 120%",
         end: "max",
-        scrub: true,  
+        scrub: true,
       },
     });
 
