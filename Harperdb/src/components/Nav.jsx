@@ -33,7 +33,7 @@ export const Nav = () => {
             <button className="w-[90px] h-[7vh] bg-transparent hover:bg-[#363636] transition duration-700">
               Sign In
             </button>
-            <button className="w-[80px] h-[50px] border-2 border-gardient rounded-sm transition duration-700 hover:bg-custom-gradient">
+            <button className="w-[80px] h-[50px] border-2 rounded-sm hover:bg-custom-gradient transition duration-700">
               Start
             </button>
           </div>

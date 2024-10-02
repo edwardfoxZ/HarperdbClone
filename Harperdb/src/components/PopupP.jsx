@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   dataStageIcon,
   ringIcon,
@@ -7,20 +7,57 @@ import {
   theLastLightIcon,
   toolIcon,
 } from "../utils";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 export const PopupP = () => {
-  
+  const toolIconRef = useRef();
+  const ringIconRef = useRef();
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(toolIconRef.current, {
+      y: window.innerHeight,
+      duration: 3,
+      ease: "power3.in",
+      scrollTrigger: {
+        trigger: toolIconRef.current,
+        start: "bottom 120%",
+        end: "max",
+        scrub: true,
+        markers: true,
+        onUpdate: (self) => {
+          const toolIconRect = toolIconRef.current.getBoundingClientRect();
+          const ringIconRect = ringIconRef.current.getBoundingClientRect();
+          if (toolIconRect.top <= ringIconRect.bottom) {
+            ringIconRef.current.style.opacity = 1;
+          } else {
+            ringIconRef.current.style.opacity = 0;
+          }
+        },
+      },
+    });
+  }, []);
+
   return (
-    <div className="w-full h-[160vh] bg-PopupP relative">
+    <div className="w-full h-[129vh] bg-PopupP relative">
       <img
-        className="absolute top-24 left-[33%]"
+        ref={toolIconRef}
+        className="absolute top-[3%] left-[33%]"
         width="450px"
         draggable={false}
         src={toolIcon}
         alt=""
       />
       <div className="flex flex-col gap-24 absolute top-28 left-[33%]">
-        <img width="450px" draggable={false} src={ringIcon} alt="" />
+        <img
+          ref={ringIconRef}
+          width="450px"
+          draggable={false}
+          src={ringIcon}
+          alt=""
+        />
         <div>
           <img
             className="absolute top-[19%]"

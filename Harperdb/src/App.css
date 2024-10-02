@@ -1,9 +1,11 @@
-.Main {
-    
-}
-
 .border-gardient {
-
+  background-image: linear-gradient(
+    90deg,
+    rgba(109, 193, 165, 1) 0%,
+    rgba(74, 177, 213, 1) 100%
+  );
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
 }
 
 .background-main {
