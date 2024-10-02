@@ -17,20 +17,16 @@ export const PopupP = () => {
   const dataIconRef = useRef();
 
   useEffect(() => {
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: toolIconRef.current,
-        start: "top 20%",
-        end: "bottom center",
-        scrub: true,
-        // markers: true,
-      },
-    });
     gsap.registerPlugin(ScrollTrigger);
 
-    tl.to(toolIconRef.current, {
-      y: 80,
-      ease: "power3.in",
+    gsap.to(toolIconRef.current, {
+      y: window.innerHeight,
+      scrollTrigger: {
+        trigger: toolIconRef.current,
+        start: "top 30%",
+        end: "max",
+        scrub: true,  
+      },
     });
 
     gsap.to(dataIconRef.current, {
