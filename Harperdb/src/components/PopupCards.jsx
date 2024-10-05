@@ -25,7 +25,6 @@ export const PopupCards = () => {
             start: "top center",
             end: "bottom center",
             scrub: true,
-            markers: true,
           },
         }
       );

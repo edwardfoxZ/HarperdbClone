@@ -3,6 +3,9 @@ import { Nav } from "../components/Nav";
 import { FiArrowRight } from "react-icons/fi";
 import { TrustedByImgs } from "../utils";
 import { PopupP } from "../components/PopupP";
+import { Latency } from "../components/Latency";
+import { GetStartedBu } from "../components/GetStartedBu";
+import { HorizonalScale } from "../components/HorizonalScale";
 
 export const Main = () => {
   const [textAnimating, setTextAnimating] = useState([
@@ -48,10 +51,8 @@ export const Main = () => {
         </p>
         <div className="absolute top-[59%] left-[32%]">
           <div className="flex flex-row gap-7">
-            <button className="bg-custom-gardient-button-main text-lg font-bold text-white p-3 pl-7 pr-7 rounded-full hover:-translate-y-2 transition duration-700">
-              Get Started
-            </button>
-            <button className="text-lg text-gray-500 hover:translate-x-1 transition duration-600">
+            <GetStartedBu size="w-[50%] text-lg p-3" />
+            <button className="w-32 text-sm text-gray-500 hover:translate-x-1 transition duration-600">
               Contact Sales{" "}
               <FiArrowRight
                 color="white"
@@ -80,6 +81,8 @@ export const Main = () => {
         </footer>
       </div>
       <PopupP />
+      <Latency />
+      <HorizonalScale />
     </>
   );
 };

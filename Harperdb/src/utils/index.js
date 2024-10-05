@@ -45,7 +45,7 @@ export const toolIcon =
 export const ringIcon =
   "https://cdn.prod.website-files.com/6374050260446c42f94dc90f/638e4774f9c7b05aeacabb86_AppDissected-06.png";
 
-export const stageIcon =
+export const cacheIcon =
   "https://cdn.prod.website-files.com/6374050260446c42f94dc90f/660d9a7b9a178d11a647c47d_CacheDonutRing.png";
 
 export const dataStageIcon =
@@ -77,5 +77,28 @@ export const CardsPopup = [
     id: 4,
     str: "Streaming",
     title: `Native real-time pub/sub communication and data processing via MQTT, WebSocket, and HTTP interfaces. HarperDB delivers powerful data-in-motion capabilities without layering in additional services like Kafka.`,
+  },
+];
+
+export const Latencies = [
+  {
+    id: 1,
+    title: "< 1 ms",
+    detail: "API-to-Data Latency",
+  },
+  {
+    id: 2,
+    title: "2-10 ms",
+    detail: "On-Prem Latency",
+  },
+  {
+    id: 3,
+    title: "10-50 ms",
+    detail: "Edge Latency",
+  },
+  {
+    id: 4,
+    title: "100 ms",
+    detail: "Global Replication",
   },
 ];

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import {
   dataStageIcon,
   ringIcon,
-  stageIcon,
+  cacheIcon,
   theCompletedIcon,
   theLastLightIcon,
   toolIcon,
@@ -13,32 +13,105 @@ import { PopupCards } from "./PopupCards";
 
 export const PopupP = () => {
   const toolIconRef = useRef();
-  const ringIconRef = useRef();
-  const dataIconRef = useRef();
+  const ringIconRef = useRef([]);
+  const cacheIconRef = useRef();
+  const stageRef = useRef();
+  const dataBaseRef = useRef();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    // const tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: toolIconRef.current,
+    //     start: "bottom 120%",
+    //     end: "max",
+    //     scrub: true,
+    //     markers: true,
+    //   },
+    // });
 
-    gsap.to(toolIconRef.current, {
-      y: window.innerHeight,
-      duration: 3,
-      ease: "power3.in",
+    const tlCacheIcon = gsap.timeline({
+      delay: 0.9,
       scrollTrigger: {
-        trigger: toolIconRef.current,
-        start: "bottom 120%",
-        end: "max",
+        trigger: cacheIconRef.current,
+        start: "top 10%",
+        end: "bottom max",
         scrub: true,
       },
     });
 
-    gsap.to(dataIconRef.current, {
-      y: 300,
+    // tl.to(toolIconRef.current, {
+    //   y: window.innerHeight,
+    //   duration: 3,
+    //   ease: "power3.in",
+    // });
+
+    gsap.to(toolIconRef.current, {
+      y: window.innerHeight,
       scrollTrigger: {
         trigger: toolIconRef.current,
-        start: "top 15%",
-        end: "bottom top",
+        start: "bottom 80%",
+        end: "max",
         scrub: true,
-        // markers: true,
+        markers: true,
+      },
+    });
+
+    //stage was vanished then show
+    gsap.fromTo(
+      stageRef.current,
+      { opacity: 0, ease: "power2.in" },
+      {
+        opacity: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: stageRef.current,
+          start: "top 80%",
+          end: "bottom center",
+          scrub: true,
+        },
+      }
+    );
+
+    //vanished the first ring icon
+    gsap.to(ringIconRef.current[0], {
+      ease: "power3.out",
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ringIconRef.current,
+        start: "top 50%",
+        end: "bottom center",
+        scrub: true,
+      },
+    });
+
+    //vanished the second ring icon
+    gsap.to(ringIconRef.current[1], {
+      ease: "power3.out",
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ringIconRef.current,
+        start: "top 10%",
+        end: "bottom 20%",
+        scrub: true,
+      },
+    });
+
+    //start the cacheIcon
+    tlCacheIcon.to(cacheIconRef.current, {
+      y: 300,
+      ease: "power3.inOut",
+    });
+
+    //start the dataBase
+    gsap.to(dataBaseRef.current, {
+      y: 200,
+      ease: "power3.in",
+      scrollTrigger: {
+        trigger: dataBaseRef.current,
+        start: "top 180%",
+        end: "bottom max",
+        scrub: true,
       },
     });
   }, []);
@@ -56,23 +129,30 @@ export const PopupP = () => {
       />
       <div className="flex flex-col gap-24 absolute top-28 left-[33%]">
         <img
-          ref={ringIconRef}
+          ref={(el) => (ringIconRef.current[0] = el)}
           width="450px"
           draggable={false}
           src={ringIcon}
           alt=""
         />
-        <div ref={dataIconRef}>
+        <div ref={cacheIconRef} className="z-10">
           <img
             className="absolute top-[19%]"
             width="450px"
             draggable={false}
-            src={stageIcon}
+            src={cacheIcon}
             alt=""
           />
-          <img width="450px" draggable={false} src={ringIcon} alt="" />
+          <img
+            className="mt-8"
+            ref={(el) => (ringIconRef.current[1] = el)}
+            width="450px"
+            draggable={false}
+            src={ringIcon}
+            alt=""
+          />
         </div>
-        <div>
+        <div ref={dataBaseRef}>
           <img
             className="absolute"
             width="450px"
@@ -82,7 +162,13 @@ export const PopupP = () => {
           />
           <img width="450px" draggable={false} src={ringIcon} alt="" />
         </div>
-        <img width="450px" draggable={false} src={theCompletedIcon} alt="" />
+        <img
+          ref={stageRef}
+          width="450px"
+          draggable={false}
+          src={theCompletedIcon}
+          alt=""
+        />
         <img width="450px" draggable={false} src={theLastLightIcon} alt="" />
       </div>
     </div>

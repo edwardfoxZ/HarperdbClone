@@ -83,3 +83,13 @@
     rgba(23, 17, 41, 1) 100%
   );
 }
+
+.bg-Latency {
+  z-index: 1;
+  background-color: #231f20;
+  background-image: url("https://cdn.prod.website-files.com/6374050260446c42f94dc90f/64f894b7c92bc58a7490e97c_RghtGrad2.png");
+  background-position: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
