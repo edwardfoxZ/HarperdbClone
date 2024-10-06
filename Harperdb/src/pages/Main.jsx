@@ -4,8 +4,13 @@ import { FiArrowRight } from "react-icons/fi";
 import { TrustedByImgs } from "../utils";
 import { PopupP } from "../components/PopupP";
 import { Latency } from "../components/Latency";
-import { GetStartedBu } from "../components/GetStartedBu";
+import { GetStartedBu } from "../tools/GetStartedBu";
 import { HorizonalScale } from "../components/HorizonalScale";
+import { Chart } from "../components/Chart";
+import { YoutubeSec } from "../components/YoutubeSec";
+import { BetterServices } from "../components/BetterServices";
+import { EfficientDevelopment } from "../components/EfficientDevelopment";
+import { BuildAnything } from "../components/BuildAnything";
 
 export const Main = () => {
   const [textAnimating, setTextAnimating] = useState([
@@ -83,6 +88,11 @@ export const Main = () => {
       <PopupP />
       <Latency />
       <HorizonalScale />
+      <Chart />
+      <YoutubeSec />
+      <BetterServices />
+      <EfficientDevelopment />
+      <BuildAnything />
     </>
   );
 };

@@ -20,15 +20,6 @@ export const PopupP = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    // const tl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: toolIconRef.current,
-    //     start: "bottom 120%",
-    //     end: "max",
-    //     scrub: true,
-    //     markers: true,
-    //   },
-    // });
 
     const tlCacheIcon = gsap.timeline({
       delay: 0.9,
@@ -40,12 +31,6 @@ export const PopupP = () => {
       },
     });
 
-    // tl.to(toolIconRef.current, {
-    //   y: window.innerHeight,
-    //   duration: 3,
-    //   ease: "power3.in",
-    // });
-
     gsap.to(toolIconRef.current, {
       y: window.innerHeight,
       scrollTrigger: {
@@ -53,7 +38,6 @@ export const PopupP = () => {
         start: "bottom 80%",
         end: "max",
         scrub: true,
-        markers: true,
       },
     });
 

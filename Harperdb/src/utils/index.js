@@ -1,3 +1,5 @@
+const video = "../assets/645aa43f654710e077b70eed_Digital Wave-transcode.mp4";
+
 export const Logo =
   "https://cdn.prod.website-files.com/6374050260446c42f94dc90f/65a96c53dabe3686101fef42_HDB-PrimaryWht-p-500.png";
 
@@ -102,3 +104,5 @@ export const Latencies = [
     detail: "Global Replication",
   },
 ];
+
+export const VidBGBuildAnything = video;

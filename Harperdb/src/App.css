@@ -93,3 +93,118 @@
   background-size: cover;
   background-attachment: fixed;
 }
+
+.bg-Chart {
+  z-index: 1;
+  background-color: #231f20;
+  background-image: linear-gradient(
+      #020102 2%,
+      #04010400 23%,
+      #0000 81%,
+      #020102 97%
+    ),
+    url("https://cdn.prod.website-files.com/6374050260446c42f94dc90f/6501ff52e302643ab196eb58_HPStarBG3.jpg"),
+    url("https://cdn.prod.website-files.com/6374050260446c42f94dc90f/64f8c2604bd9aeb9409121c0_AnnounceAsset3.png"),
+    url("https://cdn.prod.website-files.com/6374050260446c42f94dc90f/64f8c14f5603e41bebb40199_AnnounceAsset2.png");
+  background-position: 0 0, 0 0, 0 100%, 100% 0;
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+  background-size: auto, cover, 25%, 30%;
+  background-attachment: scroll, fixed, scroll, scroll;
+}
+
+.bg-text-savings-percent {
+  -webkit-text-fill-color: transparent;
+  background-image: url("https://cdn.prod.website-files.com/6374050260446c42f94dc90f/63bc768b64dbda19728af1f0_MShimmer5.webp");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-clip: text;
+  font-family: Ppradiogrotesk, sans-serif;
+  line-height: 60px;
+}
+
+.bg-Yt {
+  z-index: 1;
+  background-color: #020102;
+  background-image: url("https://cdn.prod.website-files.com/6374050260446c42f94dc90f/65b2ddd2c07e79f64ac38289_2024.01.24-Benchmarks%20CMS%20Hero.jpg");
+  background-position: 50%;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.bg-yt {
+  -webkit-backdrop-filter: saturate(116%) brightness(139%) blur(5px);
+  backdrop-filter: saturate(116%) brightness(139%) blur(5px);
+}
+
+.bg-better-services {
+  z-index: 1;
+  background-image: linear-gradient(black, rgba(0, 0, 0, 0) 27%),
+    linear-gradient(#000, #0000 0%),
+    url("https://cdn.prod.website-files.com/6374050260446c42f94dc90f/6567cf1fe6d289f4599023e1_Use%20CaseAsset%203.jpg");
+  background-position: 0 0, 0 0, 0 100%;
+  background-repeat: repeat, repeat, no-repeat;
+  background-size: auto, auto, 100%;
+  background-attachment: scroll, scroll, fixed;
+}
+
+.bag1-services-gaming {
+  background-image: linear-gradient(#000 70%, #0000),
+    url("https://cdn.prod.website-files.com/6374050260446c42f94dc90f/662126696cfd85611891f4df_films-streaming-platform-2023-11-27-05-02-57-utc.jpg");
+  background-size: auto, 100%;
+}
+
+.bag2-services-gaming {
+  background-image: linear-gradient(#000 70%, #0000),
+    url("https://cdn.prod.website-files.com/6374050260446c42f94dc90f/6621899975915e6ab5d5c62b_headphones-joystick-and-computer-keyboard-on-blac-2023-12-01-05-35-47-utc%20(1)%20(1).jpg");
+  background-size: auto, 100%;
+}
+
+.bag3-services-gaming {
+  background-image: linear-gradient(#000 70%, #0000),
+    url("https://cdn.prod.website-files.com/6374050260446c42f94dc90f/66213030ab15b574ba723071_neon-dance-woman-2023-11-27-05-19-26-utc.JPG");
+  background-size: auto, 100%;
+}
+
+.bg-efficiantDev {
+  z-index: -2;
+  background-color: black;
+  background-image: linear-gradient(180deg, black, #ffffff08 31%),
+    url("https://cdn.prod.website-files.com/6374050260446c42f94dc90f/638e359d816ee81f58093025_DevFriendlyImg2.png"),
+    linear-gradient(90deg, #522a7e00 46%, rgba(114, 0, 114, 0.286));
+  background-position: 0 0, 100%, 0 0;
+  background-repeat: repeat, no-repeat, repeat;
+  background-size: auto, 50vw, auto;
+  background-attachment: scroll, fixed, scroll;
+}
+
+.bg-efficiant-dev-card {
+  background: rgb(69, 78, 161);
+  background: linear-gradient(
+    180deg,
+    rgba(69, 78, 161, 1) 0%,
+    rgba(138, 54, 122, 1) 100%
+  );
+}
+
+.bg-build-anything {
+  background-image: linear-gradient(
+    to bottom,
+    #000,
+    #0000 37%,
+    transparent 77%,
+    rgb(0, 0, 0)
+  );
+}
+
+#video {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+}
+
+.blur-build-any-title {
+  -webkit-backdrop-filter: saturate(116%) brightness(139%) blur(5px);
+  backdrop-filter: saturate(116%) brightness(139%) blur(5px);
+}

@@ -1,30 +1,36 @@
 import React, { useEffect, useRef } from "react";
-import { GetStartedBu } from "./GetStartedBu";
+import { GetStartedBu } from "../tools/GetStartedBu";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { SpecialGrid } from "../tools/SpecialGrid";
 
 export const HorizonalScale = () => {
-  const ScaleRef = useRef();
+  const ScaleRef = useRef([]);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.fromTo(
-      ScaleRef.current,
-      { y: -100, opacity: 0, ease: "power2.in" },
-      {
-        y: 0,
-        opacity: 1,
-        ease: "power2.inOut",
-        stagger: ".5",
-        scrollTrigger: {
-          trigger: ScaleRef.current,
-          start: "top 23%",
-          end: "bottom 10%",
-          markers: true,
+    ScaleRef.current.forEach((el, index) => {
+      gsap.fromTo(
+        ScaleRef.current[index],
+        {
+          y: -100,
+          opacity: 0,
+          ease: "power2.inOut",
         },
-      }
-    );
+        {
+          y: 0,
+          opacity: 1,
+          ease: "power2.inOut",
+          stagger: "0.5",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            end: "bottom 10%",
+          },
+        }
+      );
+    });
   }, []);
 
   return (
@@ -43,19 +49,28 @@ export const HorizonalScale = () => {
         </p>
         <div className="flex flex-row items-center gap-10">
           <div className="flex flex-col gap-11 items-end">
-            <div ref={ScaleRef} className="text-white flex flex-col items-end">
+            <div
+              ref={(el) => (ScaleRef.current[0] = el)}
+              className="text-white flex flex-col items-end"
+            >
               <p>Up to</p>
               <p className="text-5xl font-bold flex flex-col items-end">
                 20,000
               </p>
               <p>Writes/Second/Node</p>
             </div>
-            <div ref={ScaleRef} className="text-white flex flex-col items-end">
+            <div
+              ref={(el) => (ScaleRef.current[1] = el)}
+              className="text-white flex flex-col items-end"
+            >
               <p>Up to</p>
               <p className="text-5xl font-bold">120,000</p>
               <p>Reads/Second/Node</p>
             </div>
-            <div ref={ScaleRef} className="text-white flex flex-col items-end">
+            <div
+              ref={(el) => (ScaleRef.current[2] = el)}
+              className="text-white flex flex-col items-end"
+            >
               <p className="text-5xl font-bold">Unlimited</p>
               <p>Nodes/Global Cluster</p>
             </div>
@@ -63,7 +78,7 @@ export const HorizonalScale = () => {
               <GetStartedBu size="w-36 p-3" />
             </div>
           </div>
-          <div className="w-3 h-[37vh] bg-latency-div-bg mt-9" />
+          <SpecialGrid className="w-3 h-[37vh] bg-latency-div-bg mt-9" />
         </div>
       </div>
       <img

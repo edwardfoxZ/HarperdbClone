@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { Latencies } from "../utils";
-import { GetStartedBu } from "./GetStartedBu";
+import { GetStartedBu } from "../tools/GetStartedBu";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { SpecialGrid } from "../tools/SpecialGrid";
 
 export const Latency = () => {
   const LatenciesRef = useRef([]);
@@ -20,7 +21,7 @@ export const Latency = () => {
           ease: "power3.inOut",
           scrollTrigger: {
             trigger: lan,
-            start: "top center",
+            start: "top 80%",
             end: "bottom 20%",
           },
         }
@@ -49,7 +50,7 @@ export const Latency = () => {
             className="flex flex-row gap-14 items-center"
             style={{ fontFamily: "Ppradiogrotesk, sans-serif" }}
           >
-            <div className="w-3 h-[48vh] bg-latency-div-bg mt-9" />
+            <SpecialGrid className="w-3 h-[48vh] bg-latency-div-bg mt-9" />
             <div className="flex flex-col gap-12">
               {Latencies.map((lan, index) => (
                 <div
