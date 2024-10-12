@@ -72,10 +72,17 @@ export const PopupP = () => {
       },
     });
 
-    // //start the cacheIcon
-    // gsap.to(cacheIconRef.current, {
-
-    // });
+    //start the cacheIcon
+    gsap.to(cacheIconRef.current, {
+      y: 300,
+      ease: "power3.inOut",
+      scrollTrigger: {
+        trigger: cacheIconRef.current,
+        start: "top 25%",
+        end: "top -10%",
+        scrub: true,
+      },
+    });
 
     //start the dataBase
     gsap.to(dataBaseRef.current, {
