@@ -92,7 +92,7 @@ export const Main = () => {
       <YoutubeSec />
       <BetterServices />
       <EfficientDevelopment />
-      <BuildAnything />
+      {/* <BuildAnything /> */}
     </>
   );
 };

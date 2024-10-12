@@ -198,12 +198,6 @@
   );
 }
 
-#video {
-  position: fixed;
-  z-index: -1;
-  width: 100%;
-}
-
 .blur-build-any-title {
   -webkit-backdrop-filter: saturate(116%) brightness(139%) blur(5px);
   backdrop-filter: saturate(116%) brightness(139%) blur(5px);
